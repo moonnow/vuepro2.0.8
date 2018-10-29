@@ -288,6 +288,91 @@ export default [
     ]
   },
   {
+    path: '/datadict',
+    name: 'datadict',
+    meta: {
+      icon: 'ios-book',
+      title: '数据字典管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'dataDict/list',
+        name: 'dataDict-list',
+        meta: {
+          icon: 'ios-bookmark',
+          title: '数据字典'
+        },
+        component: () => import('@/view/com/pro/data/dict/dataDict/dataDict-list/dataDict-list.vue')
+      },
+      {
+        path: 'dataDict',
+        name: 'dataDict',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:dataDictId',
+            name: 'dataDict-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑数据字典',
+            },
+            component: () => import('@/view/com/pro/data/dict/dataDict/dataDict-edit/dataDict-edit.vue')
+          },
+          {
+            path: 'detail/:dataDictId',
+            name: 'dataDict-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '数据字典详情',
+            },
+            component: () => import('@/view/com/pro/data/dict/dataDict/dataDict-detail/dataDict-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'dataDictValue/list',
+        name: 'dataDictValue-list',
+        meta: {
+          icon: 'md-list-box',
+          title: '数据字典值'
+        },
+        component: () => import('@/view/com/pro/data/dict/dataDictValue/dataDictValue-list/dataDictValue-list.vue')
+      },
+      {
+        path: 'dataDictValue',
+        name: 'dataDictValue',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:dataDictValueId',
+            name: 'dataDictValue-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑数据字典值',
+            },
+            component: () => import('@/view/com/pro/data/dict/dataDictValue/dataDictValue-edit/dataDictValue-edit.vue')
+          },
+          {
+            path: 'detail/:dataDictValueId',
+            name: 'dataDictValue-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '数据字典值详情',
+            },
+            component: () => import('@/view/com/pro/data/dict/dataDictValue/dataDictValue-detail/dataDictValue-detail.vue')
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: '',
     name: 'doc',
     meta: {

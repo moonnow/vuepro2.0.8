@@ -36,5 +36,6 @@ export default class Config {
     this.vueEditCssFilePath = null
     this.vueDetailFilePath = null
     this.vueDetailCssFilePath = null
+    this.jpaPersistentInterfaceFilePath = null
   }
 }

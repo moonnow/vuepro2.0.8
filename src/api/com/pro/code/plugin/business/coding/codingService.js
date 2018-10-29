@@ -47,6 +47,11 @@ export default {
     parameter.primaryKey = primaryKey
     return axios.post(url + '/coding_i_persistent' + toolService.getUrl(parameter), config, toolService.getConfig())
   },
+  codingIJpaPersistent: (primaryKey, config) => {
+    let parameter = new Parameter()
+    parameter.primaryKey = primaryKey
+    return axios.post(url + '/coding_i_jpa_persistent' + toolService.getUrl(parameter), config, toolService.getConfig())
+  },
   codingJdbcPersistentImpl: (primaryKey, config) => {
     let parameter = new Parameter()
     parameter.primaryKey = primaryKey

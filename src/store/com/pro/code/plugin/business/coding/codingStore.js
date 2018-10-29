@@ -79,6 +79,15 @@ export default {
         })
       })
     },
+    codingIJpaPersistent ({ commit, state }, { primaryKey, config }) {
+      return new Promise((resolve, reject) => {
+        codingService.codingIJpaPersistent(primaryKey, config).then(res => {
+          resolve(res)
+        }).catch(err => {
+          reject(err)
+        })
+      })
+    },
     codingJdbcPersistentImpl ({ commit, state }, { primaryKey, config }) {
       return new Promise((resolve, reject) => {
         codingService.codingJdbcPersistentImpl(primaryKey, config).then(res => {

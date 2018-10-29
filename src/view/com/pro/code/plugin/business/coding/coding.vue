@@ -172,6 +172,31 @@
     </Card>
     <Card>
       <p slot="title">
+        生成Jpa持久化接口类
+      </p>
+      <Collapse simple class="margin-top-10" :value="'0'">
+        <Panel>
+          Jpa持久化接口类
+          <div slot="content">
+            <Row>
+              <Col span="21" class="margin-top-10">
+                <Form :label-width="150">
+                  <FormItem label="文件路径：">
+                    <Input v-model="config.jpaPersistentInterfaceFilePath" :disabled="isEdit"></Input>
+                  </FormItem>
+                </Form>
+              </Col>
+              <Col span="2" class="margin-top-10">
+                <Button class="margin-left-8" ghost icon="ios-flash-outline" @click="toCodingIJpaPersistent()">生成</Button>
+              </Col>
+            </Row>
+          </div>
+        </Panel>
+      </Collapse>
+      <Spin size="large" fix v-if="spinShow"></Spin>
+    </Card>
+    <Card>
+      <p slot="title">
         生成Jdbc持久化实现类
       </p>
       <Collapse simple class="margin-top-10" :value="'0'">
@@ -582,6 +607,7 @@ export default {
       'codingVo',
       'codingException',
       'codingIPersistent',
+      'codingIJpaPersistent',
       'codingJdbcPersistentImpl',
       'codingIService',
       'codingServiceImpl',
@@ -680,6 +706,17 @@ export default {
     },
     toCodingIPersistent () {
       this.codingIPersistent({ primaryKey: this.dtId, config: this.config }).then(res => {
+        if (res.data.isSuccess && res.data.statusCode === 200) {
+          this.$Message.success({ content: '持久化接口类生成成功.', duration: 3 })
+        } else {
+          this.$Message.error({ content: res.data.msg, duration: 6 })
+        }
+      }).catch(result => {
+        this.$Message.error({ content: '请求失败！状态码 ' + result.response.status + ' ' + result.response.statusText, duration: 6 })
+      })
+    },
+    toCodingIJpaPersistent () {
+      this.codingIJpaPersistent({ primaryKey: this.dtId, config: this.config }).then(res => {
         if (res.data.isSuccess && res.data.statusCode === 200) {
           this.$Message.success({ content: '持久化接口类生成成功.', duration: 3 })
         } else {

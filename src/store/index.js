@@ -11,6 +11,8 @@ import queryStore from './com/pro/code/plugin/query/queryStore'
 import sortStore from './com/pro/code/plugin/sort/sortStore'
 import virtualColumnsStore from './com/pro/code/plugin/virtualColumns/virtualColumnsStore'
 import codingStore from './com/pro/code/plugin/business/coding/codingStore'
+import dataDictStore from './com/pro/data/dict/dataDict/dataDictStore'
+import dataDictValueStore from './com/pro/data/dict/dataDictValue/dataDictValueStore'
 
 Vue.use(Vuex)
 
@@ -36,5 +38,7 @@ store.registerModule('queryStore', queryStore)
 store.registerModule('sortStore', sortStore)
 store.registerModule('virtualColumnsStore', virtualColumnsStore)
 store.registerModule('codingStore', codingStore)
+store.registerModule('dataDictStore', dataDictStore)
+store.registerModule('dataDictValueStore', dataDictValueStore)
 
 export default store
