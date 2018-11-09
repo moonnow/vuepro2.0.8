@@ -61,6 +61,8 @@
 import { mapState, mapMutations, mapActions, mapGetters } from 'vuex'
 import DtQuery from '@/view/com/pro/code/plugin/dt/dtQuery'
 
+// @/view/com/pro/code/plugin/dt/dt-list/dt-list.vue
+
 export default {
   name: 'DtList',
   props: {
@@ -69,7 +71,7 @@ export default {
     return {
       columns: [
         { type: 'selection', width: 50, align: 'center', fixed: 'left' },
-        { title: '表名', key: 'dtName', width: 200 },
+        { title: '表名', key: 'dtName', width: 230 },
         { title: '表名注释', key: 'dtNameAnnotation', width: 150 },
         { title: '数据库表前缀', key: 'dtPrefix', width: 150 },
         { title: '实体类名', key: 'initialCaseEntityName', width: 150 },

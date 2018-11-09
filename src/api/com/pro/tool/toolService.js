@@ -1,3 +1,32 @@
+import axios from 'axios'
+import Cookies from 'js-cookie'
+
+// 请求拦截器
+axios.interceptors.request.use(config => {
+  return config
+}, error => {
+  return Promise.reject(error)
+})
+
+// 响应拦截器
+axios.interceptors.response.use(res => {
+  let url = res.config.url
+  let is = true
+  let loginurl = '/pro/login'
+  if (url.startsWith(loginurl)) {
+    is = false
+  }
+  if (is) {
+    Cookies.set('pro-token', res.data.token, { expires: new Date(res.data.cookiesExpireTimes) })
+  }
+  return res
+}, error => {
+  if (error.response.data.message) {
+    error.response.statusText = error.response.data.message
+  }
+  return Promise.reject(error)
+})
+
 export default class ToolService {
   constructor () {
     this.save = 'save'

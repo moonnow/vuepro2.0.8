@@ -373,6 +373,276 @@ export default [
     ]
   },
   {
+    path: '/sign',
+    name: 'sign',
+    meta: {
+      icon: 'ios-chatbubbles',
+      title: '登录管理'
+    },
+    component: Main,
+    children: [
+      {
+        path: 'user/list',
+        name: 'user-list',
+        meta: {
+          icon: 'ios-people',
+          title: '用户'
+        },
+        component: () => import('@/view/com/pro/sign/user/user-list/user-list.vue')
+      },
+      {
+        path: 'user',
+        name: 'user',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:userId',
+            name: 'user-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑用户',
+            },
+            component: () => import('@/view/com/pro/sign/user/user-edit/user-edit.vue')
+          },
+          {
+            path: 'detail/:userId',
+            name: 'user-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '用户详情',
+            },
+            component: () => import('@/view/com/pro/sign/user/user-detail/user-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'account/list',
+        name: 'account-list',
+        meta: {
+          icon: 'md-key',
+          title: '账号'
+        },
+        component: () => import('@/view/com/pro/sign/account/account-list/account-list.vue')
+      },
+      {
+        path: 'account',
+        name: 'account',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:accountId',
+            name: 'account-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑账号',
+            },
+            component: () => import('@/view/com/pro/sign/account/account-edit/account-edit.vue')
+          },
+          {
+            path: 'detail/:accountId',
+            name: 'account-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '账号详情',
+            },
+            component: () => import('@/view/com/pro/sign/account/account-detail/account-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'userInfo/list',
+        name: 'userInfo-list',
+        meta: {
+          icon: 'ios-person-add',
+          title: '用户信息'
+        },
+        component: () => import('@/view/com/pro/sign/userInfo/userInfo-list/userInfo-list.vue')
+      },
+      {
+        path: 'userInfo',
+        name: 'userInfo',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:userInfoId',
+            name: 'userInfo-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑用户信息',
+            },
+            component: () => import('@/view/com/pro/sign/userInfo/userInfo-edit/userInfo-edit.vue')
+          },
+          {
+            path: 'detail/:userInfoId',
+            name: 'userInfo-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '用户信息详情',
+            },
+            component: () => import('@/view/com/pro/sign/userInfo/userInfo-detail/userInfo-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'groups/list',
+        name: 'groups-list',
+        meta: {
+          icon: 'ios-contacts',
+          title: '组'
+        },
+        component: () => import('@/view/com/pro/sign/groups/groups-list/groups-list.vue')
+      },
+      {
+        path: 'groups',
+        name: 'groups',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:groupsId',
+            name: 'groups-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑组',
+            },
+            component: () => import('@/view/com/pro/sign/groups/groups-edit/groups-edit.vue')
+          },
+          {
+            path: 'detail/:groupsId',
+            name: 'groups-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '组详情',
+            },
+            component: () => import('@/view/com/pro/sign/groups/groups-detail/groups-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'userGroupsNexus/list',
+        name: 'userGroupsNexus-list',
+        meta: {
+          icon: 'md-git-compare',
+          title: '用户组'
+        },
+        component: () => import('@/view/com/pro/sign/userGroupsNexus/userGroupsNexus-list/userGroupsNexus-list.vue')
+      },
+      {
+        path: 'userGroupsNexus',
+        name: 'userGroupsNexus',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:nexusId',
+            name: 'userGroupsNexus-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑用户组',
+            },
+            component: () => import('@/view/com/pro/sign/userGroupsNexus/userGroupsNexus-edit/userGroupsNexus-edit.vue')
+          },
+          {
+            path: 'detail/:nexusId',
+            name: 'userGroupsNexus-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '用户组详情',
+            },
+            component: () => import('@/view/com/pro/sign/userGroupsNexus/userGroupsNexus-detail/userGroupsNexus-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'loginLog/list',
+        name: 'loginLog-list',
+        meta: {
+          icon: 'md-finger-print',
+          title: '登录日志'
+        },
+        component: () => import('@/view/com/pro/sign/loginLog/loginLog-list/loginLog-list.vue')
+      },
+      {
+        path: 'loginLog',
+        name: 'loginLog',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:logId',
+            name: 'loginLog-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑登录日志',
+            },
+            component: () => import('@/view/com/pro/sign/loginLog/loginLog-edit/loginLog-edit.vue')
+          },
+          {
+            path: 'detail/:logId',
+            name: 'loginLog-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '登录日志详情',
+            },
+            component: () => import('@/view/com/pro/sign/loginLog/loginLog-detail/loginLog-detail.vue')
+          }
+        ]
+      },
+      {
+        path: 'session/list',
+        name: 'session-list',
+        meta: {
+          icon: 'md-contacts',
+          title: '会话'
+        },
+        component: () => import('@/view/com/pro/sign/session/session-list/session-list.vue')
+      },
+      {
+        path: 'session',
+        name: 'session',
+        meta: {
+          hideInMenu: true
+        },
+        component: parentView,
+        children: [
+          {
+            path: 'edit/:sessionId',
+            name: 'session-edit',
+            meta: {
+              icon: 'ios-brush-outline',
+              title: '编辑会话',
+            },
+            component: () => import('@/view/com/pro/sign/session/session-edit/session-edit.vue')
+          },
+          {
+            path: 'detail/:sessionId',
+            name: 'session-detail',
+            meta: {
+              icon: 'md-bulb',
+              title: '会话详情',
+            },
+            component: () => import('@/view/com/pro/sign/session/session-detail/session-detail.vue')
+          }
+        ]
+      }
+    ]
+  },
+  {
     path: '',
     name: 'doc',
     meta: {
